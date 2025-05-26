@@ -1,4 +1,7 @@
 package com.duoc.MicroservicioLogistica.Repository;
 
-public interface RepositoryProveedor {
+import com.duoc.MicroservicioLogistica.Model.Proveedor;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RepositoryProveedor extends JpaRepository<Proveedor, Long> {
 }

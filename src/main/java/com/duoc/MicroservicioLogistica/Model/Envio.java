@@ -14,4 +14,8 @@ public class Envio {
     private Long id;
 
     private LocalDate fecha_envio;
+
+    @ManyToOne
+    @JoinColumn(name = "proveedor_id") // FK a proveedor
+    private Proveedor proveedor;
 }
