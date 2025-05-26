@@ -11,7 +11,7 @@
 	<groupId>com.duocuc.cl</groupId>
 	<artifactId>PerfulandiaSpa2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Logistica</name>
+	<name>PerfulandiaSpa2</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
