@@ -23,4 +23,7 @@ public class ServiceProveedor {
     public void eliminar(Long id) {
         repo.deleteById(id);
     }
+    public boolean existe(Long id) {
+        return repo.existsById(id);
+    }
 }

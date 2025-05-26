@@ -28,6 +28,9 @@ public class ControllerProveedor {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
+        if (!service.existe(id)) {
+            return ResponseEntity.notFound().build();
+        }
         service.eliminar(id);
         return ResponseEntity.noContent().build();
     }
