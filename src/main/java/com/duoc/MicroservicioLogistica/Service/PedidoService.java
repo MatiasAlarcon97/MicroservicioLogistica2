@@ -8,9 +8,17 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ServicePedido {
-    @Autowired
-    private RepositoryPedido repo;
+public class PedidoService {
+
+    private  RepositoryPedido repo;
+
+    public PedidoService(RepositoryPedido repo) {
+        this.repo = repo;
+    }
+
+    public Pedido crear(Pedido pedido) {
+        return repo.save(pedido);
+    }
 
     public Pedido guardar(Pedido p) {
         return repo.save(p);

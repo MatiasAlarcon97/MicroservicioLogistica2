@@ -1,7 +1,8 @@
 package com.duoc.MicroservicioLogistica.Controller;
 
+
 import com.duoc.MicroservicioLogistica.Model.Pedido;
-import com.duoc.MicroservicioLogistica.Service.ServicePedido;
+import com.duoc.MicroservicioLogistica.Service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,11 +15,17 @@ import java.util.List;
 public class ControllerPedido {
 
     @Autowired
-    private ServicePedido service;
+    private PedidoService service;
 
     @PostMapping
     public ResponseEntity<Pedido> crear(@RequestBody Pedido p) {
         return new ResponseEntity<>(service.guardar(p), HttpStatus.CREATED);
+    }
+
+    @PostMapping("/con-envio")
+    public ResponseEntity<Pedido> crearPedido(@RequestBody Pedido pedido) {
+        Pedido creado = service.crear(pedido);
+        return ResponseEntity.ok(creado);
     }
 
     @GetMapping

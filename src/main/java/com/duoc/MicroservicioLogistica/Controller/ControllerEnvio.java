@@ -1,7 +1,7 @@
 package com.duoc.MicroservicioLogistica.Controller;
 
 import com.duoc.MicroservicioLogistica.Model.Envio;
-import com.duoc.MicroservicioLogistica.Service.ServiceEnvio;
+import com.duoc.MicroservicioLogistica.Service.EnvioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,7 @@ import java.util.List;
 public class ControllerEnvio {
 
     @Autowired
-    private ServiceEnvio service;
+    private EnvioService service;
 
     @PostMapping
     public ResponseEntity<Envio> crear(@RequestBody Envio e) {

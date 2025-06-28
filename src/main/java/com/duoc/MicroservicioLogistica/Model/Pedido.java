@@ -20,6 +20,7 @@ public class Pedido {
     private LocalDate fecha_creacion;
 
     private String estado;
+    private Long id_venta;
 
     @ManyToOne
     @JoinColumn(name = "envio_id") // FK a envio

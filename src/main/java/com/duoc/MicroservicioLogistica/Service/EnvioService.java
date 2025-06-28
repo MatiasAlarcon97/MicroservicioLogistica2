@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ServiceEnvio {
+public class EnvioService {
     @Autowired
     private RepositoryEnvio repo;
 

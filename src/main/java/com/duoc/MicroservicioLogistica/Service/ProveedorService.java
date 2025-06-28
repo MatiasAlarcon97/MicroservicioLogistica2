@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ServiceProveedor {
+public class ProveedorService {
     @Autowired
     private RepositoryProveedor repo;
 
@@ -25,5 +25,9 @@ public class ServiceProveedor {
     }
     public boolean existe(Long id) {
         return repo.existsById(id);
+    }
+    public Proveedor obtenerProveedorPorDefecto() {
+        return repo.findById(1L)
+                .orElseThrow(() -> new RuntimeException("Proveedor por defecto no encontrado"));
     }
 }

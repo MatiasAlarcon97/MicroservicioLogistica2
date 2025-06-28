@@ -1,7 +1,7 @@
 package com.duoc.MicroservicioLogistica.Controller;
 
 import com.duoc.MicroservicioLogistica.Model.Proveedor;
-import com.duoc.MicroservicioLogistica.Service.ServiceProveedor;
+import com.duoc.MicroservicioLogistica.Service.ProveedorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,7 @@ import java.util.List;
 public class ControllerProveedor {
 
     @Autowired
-    private ServiceProveedor service;
+    private ProveedorService service;
 
     @PostMapping
     public ResponseEntity<Proveedor> crear(@RequestBody Proveedor p) {

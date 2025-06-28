@@ -16,7 +16,7 @@ public class Envio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private String direccion_entrega;
     private LocalDate fecha_envio;
 
     @ManyToOne
