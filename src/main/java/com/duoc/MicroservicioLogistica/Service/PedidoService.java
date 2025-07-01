@@ -31,6 +31,11 @@ public class PedidoService {
     public void eliminar(Long id) {
         repo.deleteById(id);
     }
+
+    public List<Pedido> listarTodos() {
+        return repo.findAll();
+    }
+
     public boolean existe(Long id) {
         return repo.existsById(id);
     }

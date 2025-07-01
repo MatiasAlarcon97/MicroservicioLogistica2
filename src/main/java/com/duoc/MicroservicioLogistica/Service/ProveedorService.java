@@ -27,7 +27,14 @@ public class ProveedorService {
         return repo.existsById(id);
     }
     public Proveedor obtenerProveedorPorDefecto() {
-        return repo.findById(1L)
-                .orElseThrow(() -> new RuntimeException("Proveedor por defecto no encontrado"));
+        return repo.findById(1L).orElseGet(() -> {
+            Proveedor proveedor = new Proveedor();
+            proveedor.setNombre("Proveedor por defecto");
+            proveedor.setDireccion("Generica 123");
+            proveedor.setContacto("defecto@proveedor.com");
+            Proveedor guardado = repo.save(proveedor);
+            System.out.println("Proveedor por defecto creado con ID: " + guardado.getId());
+            return guardado;
+        });
     }
 }
